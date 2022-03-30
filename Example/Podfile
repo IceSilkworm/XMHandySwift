@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'XMHandySwift_Example' do
+  pod 'XMHandySwift', :path => '../'
+
+  target 'XMHandySwift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

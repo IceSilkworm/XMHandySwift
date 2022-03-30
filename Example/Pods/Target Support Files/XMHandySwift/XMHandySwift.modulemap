@@ -1,0 +1,6 @@
+framework module XMHandySwift {
+  umbrella header "XMHandySwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,23 @@
+PODS:
+  - DeviceKit (4.6.0)
+  - XMHandySwift (0.1.0):
+    - DeviceKit
+
+DEPENDENCIES:
+  - XMHandySwift (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - DeviceKit
+
+EXTERNAL SOURCES:
+  XMHandySwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DeviceKit: 834dd8aa1be53cd85364d8f49aa5d98bfac397c4
+  XMHandySwift: e4a7890327a7877b5623fcacca60aa6905a9668f
+
+PODFILE CHECKSUM: f383374d3ec2f58a3c093cb5d685259df79ddac0
+
+COCOAPODS: 1.11.3
