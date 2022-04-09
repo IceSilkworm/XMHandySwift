@@ -3,7 +3,7 @@
 
 import UIKit
 
-class UILabelPadding: UILabel {
+public class UILabelPadding: UILabel {
 
     public var padding = UIEdgeInsets.zero
 
@@ -31,11 +31,11 @@ class UILabelPadding: UILabel {
         set { padding.bottom = newValue }
     }
 
-    override func drawText(in rect: CGRect) {
+    public override func drawText(in rect: CGRect) {
         super.drawText(in: rect.inset(by: padding))
     }
 
-    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+    public override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         let insets = self.padding
         var rect = super.textRect(forBounds: bounds.inset(by: insets), limitedToNumberOfLines: numberOfLines)
         rect.origin.x    -= insets.left
