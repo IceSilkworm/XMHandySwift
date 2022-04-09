@@ -39,7 +39,7 @@ extension UIButton {
     ///   - titlePosition: UIViewContentModeTop, UIViewContentModeBottom, UIViewContentModeLeft or UIViewContentModeRight
     ///   - additionalSpacing: Spacing between image and title
     ///   - state: State to apply this behaviour
-    @objc func set(image: UIImage?, title: String, titlePosition: UIView.ContentMode, additionalSpacing: CGFloat, state: UIControl.State){
+    @objc public func set(image: UIImage?, title: String, titlePosition: UIView.ContentMode, additionalSpacing: CGFloat, state: UIControl.State){
         imageView?.contentMode = .center
         setImage(image, for: state)
         
@@ -58,7 +58,7 @@ extension UIButton {
     ///   - titlePosition: UIViewContentModeTop, UIViewContentModeBottom, UIViewContentModeLeft or UIViewContentModeRight
     ///   - additionalSpacing: Spacing between image and title
     ///   - state: State to apply this behaviour
-    @objc func set(image: UIImage?, attributedTitle title: NSAttributedString, at position: UIView.ContentMode, width spacing: CGFloat, state: UIControl.State){
+    @objc public func set(image: UIImage?, attributedTitle title: NSAttributedString, at position: UIView.ContentMode, width spacing: CGFloat, state: UIControl.State){
         imageView?.contentMode = .center
         setImage(image, for: state)
         
@@ -128,7 +128,7 @@ extension UIButton {
 extension UIControl {
     
     /// 闭包内部实现实现事件响应
-    func handleControlEvent(events controlEvent: UIControl.Event = .touchUpInside, completionHandle: @escaping(_ sender: UIControl) -> ()) -> Void {
+    public func handleControlEvent(events controlEvent: UIControl.Event = .touchUpInside, completionHandle: @escaping(_ sender: UIControl) -> ()) -> Void {
         
         objc_setAssociatedObject(self, SenderAssociatedKeys.callBlockKey!, completionHandle, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         self.addTarget(self, action: #selector(callActionBlock(_:)), for: controlEvent)
@@ -140,7 +140,7 @@ extension UIControl {
     }
     
     /// 使用Runtime在分类Extension中添加属性
-    var context: String? {
+    public var context: String? {
         set { objc_setAssociatedObject(self, UnsafeRawPointer.init(bitPattern: SenderAssociatedKeys.bitPatternKey.hashValue)!, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC) }
         get { objc_getAssociatedObject(self, UnsafeRawPointer.init(bitPattern: SenderAssociatedKeys.bitPatternKey.hashValue)!) as? String }
     }

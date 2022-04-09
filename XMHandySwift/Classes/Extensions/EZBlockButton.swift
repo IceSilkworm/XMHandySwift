@@ -13,7 +13,7 @@ import UIKit
 public typealias EZBlockButtonAction = (_ sender: EZBlockButton) -> Void
 
 ///Make sure you use  "[weak self] (sender) in" if you are using the keyword self inside the closure or there might be a memory leak
-open class EZBlockButton: UIButton {
+public class EZBlockButton: UIButton {
     // MARK: Propeties
 
     open var highlightLayer: CALayer?

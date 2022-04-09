@@ -14,7 +14,7 @@ protocol TypeWrapperProtocol {
 }
 
 public struct NamespaceWrapper<T>: TypeWrapperProtocol {
-    let wrappedValue: T
+    public let wrappedValue: T
     init(value: T) {
         self.wrappedValue = value
     }
