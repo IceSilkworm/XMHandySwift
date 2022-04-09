@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "AutoInch.h"
 
 FOUNDATION_EXPORT double XMHandySwiftVersionNumber;
 FOUNDATION_EXPORT const unsigned char XMHandySwiftVersionString[];
