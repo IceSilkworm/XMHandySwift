@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XMHandySwift
 
 class ViewController: UIViewController {
 

@@ -22,6 +22,13 @@
 		273C18542801D90400DD693C /* ThemeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273C18512801D90400DD693C /* ThemeExtensions.swift */; };
 		273C18552801D90400DD693C /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273C18522801D90400DD693C /* ThemeManager.swift */; };
 		273C18562801D90400DD693C /* ThemeDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273C18532801D90400DD693C /* ThemeDefines.swift */; };
+		27CBFBE828058E0C0000C3C7 /* StoryboardSceneBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBFBE028058E0C0000C3C7 /* StoryboardSceneBased.swift */; };
+		27CBFBE928058E0C0000C3C7 /* StoryboardBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBFBE128058E0C0000C3C7 /* StoryboardBased.swift */; };
+		27CBFBEA28058E0C0000C3C7 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBFBE328058E0C0000C3C7 /* UICollectionView+Reusable.swift */; };
+		27CBFBEB28058E0C0000C3C7 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBFBE428058E0C0000C3C7 /* Reusable.swift */; };
+		27CBFBEC28058E0C0000C3C7 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBFBE528058E0C0000C3C7 /* UITableView+Reusable.swift */; };
+		27CBFBED28058E0C0000C3C7 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBFBE628058E0C0000C3C7 /* NibLoadable.swift */; };
+		27CBFBEE28058E0C0000C3C7 /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBFBE728058E0C0000C3C7 /* NibOwnerLoadable.swift */; };
 		2992EFA96C5EF66D72DE1A8B77340B03 /* Pods-XMHandySwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C92DA52D41E88ECC0A719918B9F67DF1 /* Pods-XMHandySwift_Tests-dummy.m */; };
 		29B5E3FC65BE46DC91F45C692C659348 /* String+LocalizedBundleTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1372D302352BDD39916049C7C170B6CA /* String+LocalizedBundleTableName.swift */; };
 		36D16D358766334DD346A238C850AB6D /* XMHandySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F7CCA4F77AA0BA61524EAD9EF78C6F6E /* XMHandySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -116,6 +123,13 @@
 		273C18522801D90400DD693C /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		273C18532801D90400DD693C /* ThemeDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeDefines.swift; sourceTree = "<group>"; };
 		273E5B57404420BED7BE5C021818757D /* UIImageExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		27CBFBE028058E0C0000C3C7 /* StoryboardSceneBased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSceneBased.swift; sourceTree = "<group>"; };
+		27CBFBE128058E0C0000C3C7 /* StoryboardBased.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardBased.swift; sourceTree = "<group>"; };
+		27CBFBE328058E0C0000C3C7 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		27CBFBE428058E0C0000C3C7 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		27CBFBE528058E0C0000C3C7 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		27CBFBE628058E0C0000C3C7 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		27CBFBE728058E0C0000C3C7 /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
 		2C53271569A7CFEAB15C9AF7B1FE9B3C /* Pods-XMHandySwift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XMHandySwift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2D629EC2D2049B06B56A38BC99BF31AA /* CharacterExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterExtensions.swift; sourceTree = "<group>"; };
 		30923F408B72535AC0F35C69E03AB95E /* XMHandySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XMHandySwift.debug.xcconfig; sourceTree = "<group>"; };
@@ -297,6 +311,36 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		27CBFBDE28058E0C0000C3C7 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				27CBFBDF28058E0C0000C3C7 /* Storyboard */,
+				27CBFBE228058E0C0000C3C7 /* View */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		27CBFBDF28058E0C0000C3C7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				27CBFBE028058E0C0000C3C7 /* StoryboardSceneBased.swift */,
+				27CBFBE128058E0C0000C3C7 /* StoryboardBased.swift */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		27CBFBE228058E0C0000C3C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				27CBFBE328058E0C0000C3C7 /* UICollectionView+Reusable.swift */,
+				27CBFBE428058E0C0000C3C7 /* Reusable.swift */,
+				27CBFBE528058E0C0000C3C7 /* UITableView+Reusable.swift */,
+				27CBFBE628058E0C0000C3C7 /* NibLoadable.swift */,
+				27CBFBE728058E0C0000C3C7 /* NibOwnerLoadable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2DC003E327998C11CB1659F204FBC418 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +517,7 @@
 		E1B256CD95D47E438B07A961A0BE0A09 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				27CBFBDE28058E0C0000C3C7 /* Reusable */,
 				273C18502801D90400DD693C /* Theme */,
 				3314835508E6B62C3C39989689075617 /* AutoInch */,
 				226C87AA9C83ADFB1F9C3AB82EAFA929 /* Layout */,
@@ -740,8 +785,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27CBFBEB28058E0C0000C3C7 /* Reusable.swift in Sources */,
+				27CBFBEE28058E0C0000C3C7 /* NibOwnerLoadable.swift in Sources */,
+				27CBFBED28058E0C0000C3C7 /* NibLoadable.swift in Sources */,
+				27CBFBE928058E0C0000C3C7 /* StoryboardBased.swift in Sources */,
+				27CBFBEA28058E0C0000C3C7 /* UICollectionView+Reusable.swift in Sources */,
 				C5C71141A72424BC3711B53BB4726744 /* Device.generated.swift in Sources */,
 				44FDC841C20165E2DE68E31737A401DC /* DeviceKit-dummy.m in Sources */,
+				27CBFBE828058E0C0000C3C7 /* StoryboardSceneBased.swift in Sources */,
+				27CBFBEC28058E0C0000C3C7 /* UITableView+Reusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
