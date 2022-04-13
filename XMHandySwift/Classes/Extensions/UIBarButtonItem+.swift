@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 
 /// PDF image size : 20px * 20px is perfect one
-public typealias ActionHandler = () -> Void
+public typealias ActionCompletionHandler = () -> Void
 
 public extension UINavigationItem {
     //left bar
-    func leftButtonAction(_ image: UIImage?, action:@escaping ActionHandler) {
+    @discardableResult
+    func leftButtonAction(_ image: UIImage?, action:@escaping ActionCompletionHandler) -> UIButton {
         let button: UIButton = UIButton(type: .custom)
         button.setImage(image, for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 40, height: 30)
@@ -27,6 +28,7 @@ public extension UINavigationItem {
         let gapItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         gapItem.width = -7 //fix the space
         self.leftBarButtonItems = [gapItem, barButton]
+        return button
     }
     
     //right bar
@@ -43,7 +45,7 @@ public extension UINavigationItem {
         let barButton = UIBarButtonItem(customView: button)
         let gapItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         gapItem.width = -7 //fix the space
-        self.rightBarButtonItems = [gapItem, barButton]
+        self.rightBarButtonItems = [barButton, gapItem]
         return button
     }
 }
@@ -62,12 +64,12 @@ private class NavClosureWrapper : NSObject {
 extension UIControl {
     
     private struct ClosureKeys {
-        static let leftButtonActionKey = UnsafeRawPointer.init(bitPattern: "leftButtonActionKey".hashValue)
+        static let PointerActionKey = UnsafeRawPointer.init(bitPattern: "kPointerActionKey".hashValue)
     }
     
     fileprivate func tappedAction(forControlEvents events: UIControl.Event, withCallback callback: @escaping () -> Void) {
         let wrapper = NavClosureWrapper(callback: callback)
         addTarget(wrapper, action:#selector(NavClosureWrapper.invoke), for: events)
-        objc_setAssociatedObject(self, ClosureKeys.leftButtonActionKey!, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, ClosureKeys.PointerActionKey!, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
 }

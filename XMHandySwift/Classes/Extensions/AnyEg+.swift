@@ -19,13 +19,15 @@ extension NamespaceWrapper where T: UIView {
         return wrappedValue
     }
 
-//    @discardableResult
-//    public func layout(snapKitMaker: (ConstraintMaker) -> Void) -> T {
-//        wrappedValue.snp.makeConstraints { (make) in
-//            snapKitMaker(make)
-//        }
-//        return wrappedValue
-//    }
+    /**
+    @discardableResult
+    public func layout(snapKitMaker: (ConstraintMaker) -> Void) -> T {
+        wrappedValue.snp.makeConstraints { (make) in
+            snapKitMaker(make)
+        }
+        return wrappedValue
+    }
+     */
 
     @discardableResult
     public func config(_ config: (T) -> Void) -> T {

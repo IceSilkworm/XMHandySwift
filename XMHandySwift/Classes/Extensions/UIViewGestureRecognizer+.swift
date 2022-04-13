@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-fileprivate class XMClosureWrapper : NSObject {
+fileprivate class ClosureWrapper : NSObject {
     let _callback : () -> Void
     init(callback : @escaping () -> Void) {
         _callback = callback
@@ -20,7 +20,7 @@ fileprivate class XMClosureWrapper : NSObject {
     }
 }
 
-fileprivate var XMAssociatedClosure: UInt8 = 23
+fileprivate var ClosureWrapperAssociatedClosure: UInt8 = 1
 
 public extension UIView {
     /// Adds a tap gesture to the view with a block that will be invoked whenever
@@ -31,10 +31,10 @@ public extension UIView {
     @discardableResult
     func tapped(callback: @escaping () -> Void) -> UITapGestureRecognizer {
         self.isUserInteractionEnabled = true
-        let wrapper = XMClosureWrapper(callback: callback)
-        let gesture = UITapGestureRecognizer.init(target: wrapper, action: #selector(XMClosureWrapper.invoke))
+        let wrapper = ClosureWrapper(callback: callback)
+        let gesture = UITapGestureRecognizer.init(target: wrapper, action: #selector(ClosureWrapper.invoke))
         addGestureRecognizer(gesture)
-        objc_setAssociatedObject(self, &XMAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &ClosureWrapperAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return gesture
     }
     
@@ -46,10 +46,10 @@ public extension UIView {
     @discardableResult
     func longPressed(callback: @escaping () -> Void) -> UILongPressGestureRecognizer {
         self.isUserInteractionEnabled = true
-        let wrapper = XMClosureWrapper(callback: callback)
-        let gesture = UILongPressGestureRecognizer.init(target: wrapper, action: #selector(XMClosureWrapper.invoke))
+        let wrapper = ClosureWrapper(callback: callback)
+        let gesture = UILongPressGestureRecognizer.init(target: wrapper, action: #selector(ClosureWrapper.invoke))
         addGestureRecognizer(gesture)
-        objc_setAssociatedObject(self, &XMAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &ClosureWrapperAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return gesture
     }
     
@@ -61,10 +61,10 @@ public extension UIView {
     @discardableResult
     func pinched(callback: @escaping () -> Void) -> UIPinchGestureRecognizer {
         self.isUserInteractionEnabled = true
-        let wrapper = XMClosureWrapper(callback: callback)
-        let gesture = UIPinchGestureRecognizer.init(target: wrapper, action: #selector(XMClosureWrapper.invoke))
+        let wrapper = ClosureWrapper(callback: callback)
+        let gesture = UIPinchGestureRecognizer.init(target: wrapper, action: #selector(ClosureWrapper.invoke))
         addGestureRecognizer(gesture)
-        objc_setAssociatedObject(self, &XMAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &ClosureWrapperAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return gesture
     }
     
@@ -76,10 +76,10 @@ public extension UIView {
     @discardableResult
     func panned(callback: @escaping () -> Void) -> UIPanGestureRecognizer {
         self.isUserInteractionEnabled = true
-        let wrapper = XMClosureWrapper(callback: callback)
-        let gesture = UIPanGestureRecognizer.init(target: wrapper, action: #selector(XMClosureWrapper.invoke))
+        let wrapper = ClosureWrapper(callback: callback)
+        let gesture = UIPanGestureRecognizer.init(target: wrapper, action: #selector(ClosureWrapper.invoke))
         addGestureRecognizer(gesture)
-        objc_setAssociatedObject(self, &XMAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &ClosureWrapperAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return gesture
     }
     
@@ -91,10 +91,10 @@ public extension UIView {
     @discardableResult
     func rotated(callback: @escaping () -> Void) -> UIRotationGestureRecognizer {
         self.isUserInteractionEnabled = true
-        let wrapper = XMClosureWrapper(callback: callback)
-        let gesture = UIRotationGestureRecognizer.init(target: wrapper, action: #selector(XMClosureWrapper.invoke))
+        let wrapper = ClosureWrapper(callback: callback)
+        let gesture = UIRotationGestureRecognizer.init(target: wrapper, action: #selector(ClosureWrapper.invoke))
         addGestureRecognizer(gesture)
-        objc_setAssociatedObject(self, &XMAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &ClosureWrapperAssociatedClosure, wrapper, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return gesture
     }
 }

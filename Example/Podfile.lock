@@ -1,9 +1,9 @@
 PODS:
   - DeviceKit (4.6.0)
-  - XMHandySwift (0.1.2):
+  - XMHandySwift (0.1.4):
     - DeviceKit
-    - XMHandySwift/HandySwift (= 0.1.2)
-  - XMHandySwift/HandySwift (0.1.2):
+    - XMHandySwift/HandySwift (= 0.1.4)
+  - XMHandySwift/HandySwift (0.1.4):
     - DeviceKit
 
 DEPENDENCIES:
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DeviceKit: 834dd8aa1be53cd85364d8f49aa5d98bfac397c4
-  XMHandySwift: d212e0b260dc94600a3929140780838da66e814f
+  XMHandySwift: 45f8eff3ae197dd86a15ad228183893d34f22059
 
 PODFILE CHECKSUM: f383374d3ec2f58a3c093cb5d685259df79ddac0
 

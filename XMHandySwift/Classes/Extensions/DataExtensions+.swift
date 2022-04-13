@@ -6,21 +6,20 @@
 
 import Foundation
 
-public enum ImageFormat {
-    case UnKnow
-    case JPEG
-    case PNG
-    case GIF
-    case TIFF
-    case WebP
-    case HEIC
-    case HEIF
-}
-
-
 public extension Data {
     
-    func getImageFormat() -> ImageFormat  {
+    enum ImageFormat {
+        case UnKnow
+        case JPEG
+        case PNG
+        case GIF
+        case TIFF
+        case WebP
+        case HEIC
+        case HEIF
+    }
+    
+    func imageFormat() -> ImageFormat  {
         var buffer = [UInt8](repeating: 0, count: 1)
         self.copyBytes(to: &buffer, count: 1)
         
@@ -49,8 +48,8 @@ public extension Data {
         return .UnKnow
     }
     
-    func getImageMimeType() ->String {
-        switch getImageFormat() {
+    func imageMimeType() ->String {
+        switch imageFormat() {
         case .JPEG:
             return "JPEG"
         case .PNG:

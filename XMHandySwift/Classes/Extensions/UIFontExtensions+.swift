@@ -86,23 +86,23 @@ family: PingFang SC
 
 extension UIFont {
     /// boundingRect height
-    func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
+    func sizeHeightOfString (string: String, constrainedToWidth width: Double) -> CGFloat {
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
         return NSString(string: string).boundingRect(
                 with: CGSize(width: width, height: .greatestFiniteMagnitude),
                 options: options,
-                attributes: [.font: self],
-                context: nil).size
+                attributes: [NSMutableAttributedString.Key.font: self],
+                context: nil).size.height
     }
 
     /// boundingRect width
-    func sizeOfString (string: String, constrainedToHeight height: Double) -> CGSize {
+    func sizeWidthOfString (string: String, constrainedToHeight height: Double) -> CGFloat {
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
         return NSString(string: string).boundingRect(
                 with: CGSize(width: .greatestFiniteMagnitude, height: height),
                 options: options,
-                attributes: [.font: self],
-                context: nil).size
+                attributes: [NSMutableAttributedString.Key.font: self],
+                context: nil).size.width
     }
 }
 
