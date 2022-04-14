@@ -24,6 +24,7 @@
 		1E909EB12C1EAC4BA141FB502654D49B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		1F6B4ABF6F65CD584AF8CA6A03781AC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		272600D714D400B563A275444E16F223 /* ThemeDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78CEEF9C2DF5B5DF501B2894A7904A9 /* ThemeDefines.swift */; };
+		27D264422807CE3400ABE764 /* CenteredCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D264412807CE3400ABE764 /* CenteredCollectionViewFlowLayout.swift */; };
 		2992EFA96C5EF66D72DE1A8B77340B03 /* Pods-XMHandySwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C92DA52D41E88ECC0A719918B9F67DF1 /* Pods-XMHandySwift_Tests-dummy.m */; };
 		2A8DB44334E4F41E96BBD2491DF56F4A /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF7A5FDEDE285D2AB4A67E30E0CE59 /* CollectionExtensions.swift */; };
 		2A9E65A4FBAEEB2E2946B6DBA4FC1980 /* FloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FF44E75D2202068E3D444717DA42B5 /* FloatExtensions.swift */; };
@@ -148,6 +149,7 @@
 		1FB20BD1C2A51B3FA90F1BA4363A0694 /* UIButtonExtensions+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButtonExtensions+.swift"; sourceTree = "<group>"; };
 		232536C54D09BE24F1C3E7B174D2F7C5 /* NSRangeExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
 		24ADB2423B77DFE6916FC2C1F266AFC6 /* NibLoadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		27D264412807CE3400ABE764 /* CenteredCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		289517035581241A7181D62E096E4A48 /* StringProtocolExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StringProtocolExtensions.swift; sourceTree = "<group>"; };
 		2A8F7EEE7EB9724A5ED6249F952E4C24 /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		2C53271569A7CFEAB15C9AF7B1FE9B3C /* Pods-XMHandySwift_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XMHandySwift_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 		8E20D87F90E202ABFA06BF0A9C46798F /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				27D264412807CE3400ABE764 /* CenteredCollectionViewFlowLayout.swift */,
 				6FDBA34872F8080529D2ABCB55E4948C /* CHTCollectionViewWaterfallLayout.swift */,
 				C10BFC111776252CCBCD84907608B806 /* UICollectionGridViewLayout.swift */,
 				6A174B086AF3B7FF93AC1D4E4A622A38 /* UICollectionViewLeftAlignedLayout.swift */,
@@ -921,6 +924,7 @@
 				F1B97895932E8E67F3CFDDFA55B81D62 /* UITableView+Reusable.swift in Sources */,
 				ACC054C4FC8FEEE56F18850BB8B6C8F6 /* UITextFieldExtensions.swift in Sources */,
 				BA0F236BCE916431F566717EE62BBAD3 /* UIViewGestureRecognizer+.swift in Sources */,
+				27D264422807CE3400ABE764 /* CenteredCollectionViewFlowLayout.swift in Sources */,
 				466B2B47C80E19EE06A2BB2CC45D6100 /* UIViewControllerExtensions.swift in Sources */,
 				07A8FD47DBDDE5D10FAA6B74EE40497C /* UIViewExtensions+.swift in Sources */,
 				B3EA9681CA9DA3C5ADE2358BE663BB05 /* UIWindowExtensions.swift in Sources */,
