@@ -133,7 +133,7 @@ public extension NSRange {
 }
 
 
-extension String {
+public extension String {
     
     subscript(range:ClosedRange<Int>) -> String{
         let range = self.index(startIndex, offsetBy: range.lowerBound )...self.index(startIndex, offsetBy: range.upperBound)
@@ -141,7 +141,7 @@ extension String {
     }
     
     //range转换为NSRange
-    func nsRange(from range: Range<String.Index>) -> NSRange {
+    func cRange(from range: Range<String.Index>) -> NSRange {
         let from = range.lowerBound.samePosition(in: utf16)
         let to = range.upperBound.samePosition(in: utf16)
         return NSRange(location: utf16.distance(from: utf16.startIndex, to: from!),

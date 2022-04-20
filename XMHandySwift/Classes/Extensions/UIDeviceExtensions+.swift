@@ -7,7 +7,7 @@
 
 import DeviceKit
 
-public extension Device {
+public extension UIDevice {
     static var isIphoneX: Bool {
         if #available(iOS 11.0, *) {
             return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0 > 0
@@ -46,3 +46,6 @@ public extension Device {
     }
 }
 
+public extension Device {
+    
+}

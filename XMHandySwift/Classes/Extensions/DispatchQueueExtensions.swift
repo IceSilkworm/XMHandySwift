@@ -10,14 +10,14 @@ import Foundation
 
 // stolen from Kingfisher: https://github.com/onevcat/Kingfisher/blob/master/Sources/ThreadHelper.swift
 
-func dispatch_async_safely_to_main_queue(_ block: @escaping ()->()) {
+public func dispatch_async_safely_to_main_queue(_ block: @escaping ()->()) {
     dispatch_async_safely_to_queue(DispatchQueue.main, block)
 }
 
 // This methd will dispatch the `block` to a specified `queue`.
 // If the `queue` is the main queue, and current thread is main thread, the block
 // will be invoked immediately instead of being dispatched.
-func dispatch_async_safely_to_queue(_ queue: DispatchQueue, _ block: @escaping ()->()) {
+public func dispatch_async_safely_to_queue(_ queue: DispatchQueue, _ block: @escaping ()->()) {
     if queue === DispatchQueue.main && Thread.isMainThread {
         block()
     } else {
@@ -28,12 +28,12 @@ func dispatch_async_safely_to_queue(_ queue: DispatchQueue, _ block: @escaping (
 }
 
 //The free function dispatch_once is no longer available in Swift. In Swift, you can use lazily initialized globals or static properties and get the same thread-safety and called-once guarantees as dispatch_once provided.
-extension DispatchQueue {
+public extension DispatchQueue {
     private static var _onceTracker = [String]()
     
-    public class func once(file: String = #file, function: String = #function, line: Int = #line, block:()->Void) {
+    class func once(file: String = #file, function: String = #function, line: Int = #line, block:()->Void) {
         let token = file + ":" + function + ":" + String(line)
-        once(token: token, block: block)
+        DispatchQueue.once(token: token, block: block)
     }
     
     /**
@@ -43,16 +43,16 @@ extension DispatchQueue {
      - parameter token: A unique reverse DNS style name such as com.vectorform.<name> or a GUID
      - parameter block: Block to execute once
      */
-    public class func once(token: String, block:()->Void) {
+    class func once(token: String, block:()->Void) {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
         
         
-        if _onceTracker.contains(token) {
+        if DispatchQueue._onceTracker.contains(token) {
             return
         }
         
-        _onceTracker.append(token)
+        DispatchQueue._onceTracker.append(token)
         block()
     }
 }

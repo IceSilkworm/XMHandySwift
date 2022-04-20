@@ -38,7 +38,7 @@
 
 import Foundation
 
-extension NSObject {
+public extension NSObject {
     
     //
     // Retrieves an array of property names found on the current object
@@ -113,7 +113,7 @@ public final class ObjectAssociation<T: AnyObject> {
 
 
 //  a life of once time
-extension NSObject {
+public extension NSObject {
     
     private static let association = ObjectAssociation<NSObject>()
     
@@ -132,9 +132,9 @@ extension NSObject {
 }
 
 
-extension NSObject {
+public extension NSObject {
     
-    internal static func swizzleMethod(_ cls: AnyClass?, _ originSelector: Selector, _ swizzleSelector: Selector)  {
+    /*internal*/ static func swizzleMethod(_ cls: AnyClass?, _ originSelector: Selector, _ swizzleSelector: Selector)  {
         let originMethod = class_getInstanceMethod(cls, originSelector)
         let swizzleMethod = class_getInstanceMethod(cls, swizzleSelector)
         guard let swMethod = swizzleMethod, let oMethod = originMethod else { return }
