@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-protocol UICollectionGridViewLayoutDelegate: UICollectionViewDelegate, UICollectionViewDataSource {
+public protocol UICollectionGridViewLayoutDelegate: UICollectionViewDelegate, UICollectionViewDataSource {
     func titlesCols() -> [String]
 }
 //多列表格组件布局类
-class UICollectionGridViewLayout: UICollectionViewLayout {
+open class UICollectionGridViewLayout: UICollectionViewLayout {
     //记录每个单元格的布局属性
     private var itemAttributes: [[UICollectionViewLayoutAttributes]] = []
     private var itemsSize: [NSValue] = []
@@ -23,7 +23,7 @@ class UICollectionGridViewLayout: UICollectionViewLayout {
     }
     
     //准备所有view的layoutAttribute信息
-    override func prepare() {
+    override open func prepare() {
         if collectionView!.numberOfSections == 0 {
             return
         }
@@ -86,7 +86,7 @@ class UICollectionGridViewLayout: UICollectionViewLayout {
     }
     
     //需要更新layout时调用
-    override func invalidateLayout() {
+    override open func invalidateLayout() {
         itemAttributes = []
         itemsSize = []
         contentSize = CGSize.zero
@@ -94,20 +94,20 @@ class UICollectionGridViewLayout: UICollectionViewLayout {
     }
     
     // 返回内容区域总大小，不是可见区域
-    override var collectionViewContentSize: CGSize {
+    override open var collectionViewContentSize: CGSize {
         get {
             return contentSize
         }
     }
     
     // 这个方法返回每个单元格的位置和大小
-    override func layoutAttributesForItem(at indexPath: IndexPath)
+    override open func layoutAttributesForItem(at indexPath: IndexPath)
         -> UICollectionViewLayoutAttributes? {
         return itemAttributes[indexPath.section][indexPath.row]
     }
     
     // 返回所有单元格位置属性
-    override func layoutAttributesForElements(in rect: CGRect)
+    override open func layoutAttributesForElements(in rect: CGRect)
         -> [UICollectionViewLayoutAttributes]? {
             var attributes: [UICollectionViewLayoutAttributes] = []
             for section in itemAttributes {
@@ -121,7 +121,7 @@ class UICollectionGridViewLayout: UICollectionViewLayout {
     
     //当边界发生改变时，是否应该刷新布局。
     //本例在宽度变化时，将重新计算需要的布局信息。
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+    override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         let oldBounds = self.collectionView?.bounds
         if oldBounds!.width != newBounds.width {
             return true

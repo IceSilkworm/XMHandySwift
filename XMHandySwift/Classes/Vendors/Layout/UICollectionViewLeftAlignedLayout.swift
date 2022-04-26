@@ -15,8 +15,8 @@ extension UICollectionViewLayoutAttributes {
     }
 }
 
-class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+open class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
+    override open func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
         var attributesCopy: [UICollectionViewLayoutAttributes] = []
         if let attributes = super.layoutAttributesForElements(in: rect) {
@@ -34,7 +34,7 @@ class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
         return attributesCopy
     }
     
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override open func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
         if let currentItemAttributes = super.layoutAttributesForItem(at: indexPath as IndexPath)?.copy() as? UICollectionViewLayoutAttributes {
             let sectionInset = self.evaluatedSectionInsetForItem(at: indexPath.section)
