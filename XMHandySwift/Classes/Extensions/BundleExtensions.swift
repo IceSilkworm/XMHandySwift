@@ -10,12 +10,13 @@ import UIKit
 
 #if os(iOS) || os(tvOS)
 
-extension NSObject {
-    public var className: String {
+public extension NSObject {
+    
+    var className: String {
         return type(of: self).className
     }
     
-    public static var className: String {
+    static var className: String {
         return String(describing: self)
     }
 }
@@ -42,11 +43,11 @@ public extension Bundle {
     #endif
 }
 
-protocol StoryboardInitializes {
+public protocol StoryboardInitializes {
     static var storyboardIdentifier: String { get }
 }
 
-extension StoryboardInitializes where Self: UIViewController {
+public extension StoryboardInitializes where Self: UIViewController {
     
     #if os(iOS) || os(tvOS)
 

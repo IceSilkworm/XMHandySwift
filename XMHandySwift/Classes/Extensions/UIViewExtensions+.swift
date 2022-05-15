@@ -10,7 +10,7 @@ import UIKit
 
 
 // MARK: - Properties
-extension UIView {
+public extension UIView {
     
     
     /// SwifterSwift: Size of view.
@@ -81,13 +81,13 @@ extension UIView {
 
 
 // MARK: Layer Extensions
-extension UIView {
+public extension UIView {
     /// EZSwiftExtensions
     ///
     /// - Parameters:
     ///   - corners: 需要实现为圆角的角，可传入多个
     ///   - radii: 圆角半径
-    public func setCornerRadius(byRoundingCorners corners: UIRectCorner, radii: CGFloat, rect: CGRect = CGRect.zero) {
+    func setCornerRadius(byRoundingCorners corners: UIRectCorner, radii: CGFloat, rect: CGRect = CGRect.zero) {
         guard corners != .allCorners else {
             layer.cornerRadius = radii
             layer.masksToBounds = true
@@ -103,7 +103,7 @@ extension UIView {
 
     //TODO: add this to readme
     /// EZSwiftExtensions
-    public func setCornerShadow(shadowOffset: CGSize, shadowRadius: CGFloat, shadowColor: UIColor, shadowOpacity: Float, roundingCorners: UIRectCorner, cornerRadius: CGFloat? = nil) {
+    func setCornerShadow(shadowOffset: CGSize, shadowRadius: CGFloat, shadowColor: UIColor, shadowOpacity: Float, roundingCorners: UIRectCorner, cornerRadius: CGFloat? = nil) {
         self.layer.shadowOffset = shadowOffset
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowOpacity = shadowOpacity
@@ -117,7 +117,7 @@ extension UIView {
 }
 
 
-extension UIView {
+public extension UIView {
     ///EZSE: Loops until it finds the top root view. //TODO: Add to readme
     var rootView: UIView {
         guard let parentView = superview else {
@@ -142,19 +142,19 @@ extension UIView {
 // MARK: Fade Extensions
 public let UIViewDefaultFadeDuration: TimeInterval = 0.4
 
-extension UIView {
+public extension UIView {
     ///EZSE: Fade in with duration, delay and completion block.
-    public func fadeIn(_ duration: TimeInterval? = UIViewDefaultFadeDuration, delay: TimeInterval? = 0.0, completion: ((Bool) -> Void)? = nil) {
+    func fadeIn(_ duration: TimeInterval? = UIViewDefaultFadeDuration, delay: TimeInterval? = 0.0, completion: ((Bool) -> Void)? = nil) {
         fadeTo(1.0, duration: duration, delay: delay, completion: completion)
     }
 
     /// EZSwiftExtensions
-    public func fadeOut(_ duration: TimeInterval? = UIViewDefaultFadeDuration, delay: TimeInterval? = 0.0, completion: ((Bool) -> Void)? = nil) {
+    func fadeOut(_ duration: TimeInterval? = UIViewDefaultFadeDuration, delay: TimeInterval? = 0.0, completion: ((Bool) -> Void)? = nil) {
         fadeTo(0.0, duration: duration, delay: delay, completion: completion)
     }
 
     /// Fade to specific value	 with duration, delay and completion block.
-    public func fadeTo(_ value: CGFloat, duration: TimeInterval? = UIViewDefaultFadeDuration, delay: TimeInterval? = 0.0, completion: ((Bool) -> Void)? = nil) {
+    func fadeTo(_ value: CGFloat, duration: TimeInterval? = UIViewDefaultFadeDuration, delay: TimeInterval? = 0.0, completion: ((Bool) -> Void)? = nil) {
         UIView.animate(withDuration: duration ?? UIViewDefaultFadeDuration, delay: delay ?? UIViewDefaultFadeDuration, options: .curveEaseInOut, animations: {
             self.alpha = value
         }, completion: completion)
@@ -163,7 +163,7 @@ extension UIView {
 
 /// MARK: EZSwiftExtensions DrawBoardDottedLine
 ///
-extension UIView {
+public extension UIView {
 
     func drawBoardDottedLine(width: CGFloat, length: CGFloat, space: CGFloat, cornerRadius: CGFloat, color: UIColor){
         self.layer.cornerRadius = cornerRadius

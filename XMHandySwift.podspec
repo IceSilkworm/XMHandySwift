@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XMHandySwift'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'A handy collection of more than 500 native Swift extensions to boost your productivity.'
 
 # This description is used to generate tags and improve search results.

@@ -84,7 +84,7 @@ family: PingFang SC
 
 }
 
-extension UIFont {
+public extension UIFont {
     /// boundingRect height
     func sizeHeightOfString (string: String, constrainedToWidth width: Double) -> CGFloat {
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
