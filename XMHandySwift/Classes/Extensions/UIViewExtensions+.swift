@@ -14,18 +14,18 @@ public extension UIView {
     
     
     /// SwifterSwift: Size of view.
-    var size: CGSize {
+    var yy_size: CGSize {
         get {
             return frame.size
         }
         set {
-            width = newValue.width
-            height = newValue.height
+            yy_width = newValue.width
+            yy_height = newValue.height
         }
     }
     
     /// SwifterSwift: Width of view.
-    var width: CGFloat {
+    var yy_width: CGFloat {
         get {
             return frame.size.width
         }
@@ -35,7 +35,7 @@ public extension UIView {
     }
     
     /// SwifterSwift: Height of view.
-    var height: CGFloat {
+    var yy_height: CGFloat {
         get {
             return frame.size.height
         }
@@ -45,7 +45,7 @@ public extension UIView {
     }
 
     /// SwifterSwift: x origin of view.
-    var x: CGFloat {
+    var yy_x: CGFloat {
         get {
             return frame.origin.x
         }
@@ -55,7 +55,7 @@ public extension UIView {
     }
 
     /// SwifterSwift: y origin of view.
-    var y: CGFloat {
+    var yy_y: CGFloat {
         get {
             return frame.origin.y
         }
