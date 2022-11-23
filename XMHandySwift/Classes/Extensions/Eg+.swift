@@ -15,7 +15,7 @@ public struct eg {
     /// - debug: Application is running in debug mode.
     /// - testFlight: Application is installed from Test Flight.
     /// - appStore: Application is installed from the App Store.
-    enum Environment {
+    public enum Environment {
         /// SwifterSwift: Application is running in debug mode.
         case debug
         /// SwifterSwift: Application is installed from Test Flight.
@@ -54,27 +54,27 @@ public struct eg {
     }
     
     /// EZSE: Returns app's name
-    static var appDisplayName: String {
+    public static var appDisplayName: String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String ?? ""
     }
 
     /// EZSE: Returns app's version number
-    static var appVersion: String {
+    public static var appVersion: String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
     }
 
     /// EZSE: Return app's build number
-    static var appBuild: String {
+    public static var appBuild: String {
         return Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String ?? ""
     }
 
     /// EZSE: Return app's bundle ID
-    static var appBundleID: String {
+    public static var appBundleID: String {
         return Bundle.main.bundleIdentifier ?? ""
     }
 
     /// EZSE: Return device version ""
-    static var deviceVersion: String {
+    public static var deviceVersion: String {
         var size: Int = 0
         sysctlbyname("hw.machine", nil, &size, nil, 0)
         var machine = [CChar](repeating: 0, count: Int(size))
@@ -85,7 +85,7 @@ public struct eg {
     #if !os(macOS)
     /// EZSE: Returns true if app is running in test flight mode
     /// Acquired from : http://stackoverflow.com/questions/12431994/detect-testflight
-    static var isInTestFlight: Bool {
+    public static var isInTestFlight: Bool {
         return Bundle.main.appStoreReceiptURL?.path.contains("sandboxReceipt") == true 
     }
     #endif
@@ -96,7 +96,7 @@ public struct eg {
     #if os(iOS)
 
     /// EZSE: Returns current screen orientation
-    static var screenOrientation: UIInterfaceOrientation {
+    public static var screenOrientation: UIInterfaceOrientation {
         return UIApplication.shared.statusBarOrientation
     }
 
@@ -107,7 +107,7 @@ public struct eg {
     #if os(iOS) || os(tvOS)
 
     /// EZSE: Returns screen width
-    static var screenWidth: CGFloat {
+    public static var screenWidth: CGFloat {
 
         #if os(iOS)
 
@@ -125,7 +125,7 @@ public struct eg {
     }
 
     /// EZSE: Returns screen height
-    static var screenHeight: CGFloat {
+    public static var screenHeight: CGFloat {
 
         #if os(iOS)
 
@@ -147,12 +147,12 @@ public struct eg {
     #if os(iOS)
 
     /// EZSE: Returns StatusBar height
-    static var screenStatusBarHeight: CGFloat {
+    public static var screenStatusBarHeight: CGFloat {
         return UIApplication.shared.statusBarFrame.height
     }
 
     /// EZSE: Return screen's height without StatusBar
-    static var screenHeightWithoutStatusBar: CGFloat {
+    public static var screenHeightWithoutStatusBar: CGFloat {
         if screenOrientation.isPortrait {
             return UIScreen.main.bounds.size.height - screenStatusBarHeight
         } else {
@@ -163,14 +163,14 @@ public struct eg {
     #endif
 
     /// EZSE: Returns the locale country code. An example value might be "ES". //TODO: Add to readme
-    static var currentRegion: String? {
+    public static var currentRegion: String? {
         return (Locale.current as NSLocale).object(forKey: NSLocale.Key.countryCode) as? String
     }
     
     #if os(iOS) || os(tvOS)
 
     /// EZSE: Calls action when a screen shot is taken
-    static func detectScreenShot(_ action: @escaping () -> Void) {
+    public static func detectScreenShot(_ action: @escaping () -> Void) {
         let mainQueue = OperationQueue.main
         NotificationCenter.default.addObserver(forName: UIApplication.userDidTakeScreenshotNotification, object: nil, queue: mainQueue) { _ in
             // executes after screenshot
@@ -183,7 +183,7 @@ public struct eg {
     //TODO: Document this, add tests to this
     /// EZSE: Iterates through enum elements, use with (for element in ez.iterateEnum(myEnum))
     /// http://stackoverflow.com/questions/24007461/how-to-enumerate-an-enum-with-string-type
-    static func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
+    public static func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
         var i = 0
         return AnyIterator {
             let next = withUnsafePointer(to: &i) { $0.withMemoryRebound(to: T.self, capacity: 1) { $0.pointee } }
@@ -196,36 +196,36 @@ public struct eg {
     // MARK: - Dispatch
 
     /// EZSE: Runs the function after x seconds
-    static func dispatchDelay(_ second: Double, closure:@escaping () -> Void) {
+    public static func dispatchDelay(_ second: Double, closure:@escaping () -> Void) {
         DispatchQueue.main.asyncAfter(
             deadline: DispatchTime.now() + Double(Int64(second * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
 
     /// EZSE: Runs function after x seconds
-    static func runThisAfterDelay(seconds: Double, after: @escaping () -> Void) {
+    public static func runThisAfterDelay(seconds: Double, after: @escaping () -> Void) {
         runThisAfterDelay(seconds: seconds, queue: DispatchQueue.main, after: after)
     }
 
     //TODO: Make this easier
     /// EZSE: Runs function after x seconds with dispatch_queue, use this syntax: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)
-    static func runThisAfterDelay(seconds: Double, queue: DispatchQueue, after: @escaping () -> Void) {
+    public static func runThisAfterDelay(seconds: Double, queue: DispatchQueue, after: @escaping () -> Void) {
         let time = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         queue.asyncAfter(deadline: time, execute: after)
     }
 
     /// EZSE: Submits a block for asynchronous execution on the main queue
-    static func runThisInMainThread(_ block: @escaping () -> Void) {
+    public static func runThisInMainThread(_ block: @escaping () -> Void) {
         DispatchQueue.main.async(execute: block)
     }
 
     /// EZSE: Runs in Default priority queue
-    static func runThisInBackground(_ block: @escaping () -> Void) {
+    public static func runThisInBackground(_ block: @escaping () -> Void) {
         DispatchQueue.global(qos: .default).async(execute: block)
     }
 
     /// EZSE: Runs every second, to cancel use: timer.invalidate()
     @discardableResult
-    static func runThisEvery(
+    public static func runThisEvery(
         seconds: TimeInterval,
         startAfterSeconds: TimeInterval,
         handler: @escaping (CFRunLoopTimer?) -> Void) -> Timer {
@@ -235,33 +235,41 @@ public struct eg {
         return timer!
     }
     
+    /// EZSE: Judge whether it is Liu Hai ping
+    static var isIphoneX: Bool {
+        if #available(iOS 11.0, *) {
+            return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0 > 0
+        } else {
+            return false
+        }
+    }
 }
 
 extension eg {
     
     /// EZSwiftExtensions
-    static func deviceLanguage() -> String {
+    public static func deviceLanguage() -> String {
         return Bundle.main.preferredLocalizations[0]
     }
     
     //TODO: Fix syntax, add docs and readme for these methods:
     //TODO: Delete isSystemVersionOver()
     // MARK: - Device Version Checks
-    enum UIDeviceVersions: Float {
+    public enum UIDeviceVersions: Float {
         case ten = 10.0
         case eleven = 11.0
     }
     
-    static func isVersion(_ version: UIDeviceVersions) -> Bool {
+    public static func isVersion(_ version: UIDeviceVersions) -> Bool {
         return  (UIDevice.current.systemVersion as NSString).floatValue >= version.rawValue && (UIDevice.current.systemVersion as NSString).floatValue <  (version.rawValue + 1.0)
     }
     
-    static func isVersionOrLater(_ version: UIDeviceVersions) -> Bool {
+    public static func isVersionOrLater(_ version: UIDeviceVersions) -> Bool {
         return  (UIDevice.current.systemVersion as NSString).floatValue >= version.rawValue
     }
     
     /// EZSwiftExtensions
-    static func isSystemVersionOver(_ requiredVersion: String) -> Bool {
+    public static func isSystemVersionOver(_ requiredVersion: String) -> Bool {
         switch UIDevice.current.systemVersion.compare(requiredVersion, options: NSString.CompareOptions.numeric) {
         case .orderedSame, .orderedDescending:
             return true
