@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Goktug Yilmaz. All rights reserved.
 //
 
-//TODO: others standart video, gif
+// TODO: others standart video, gif
 
 import UIKit
 
-public struct ez {
+public struct eg {
     
     /// - debug: Application is running in debug mode.
     /// - testFlight: Application is installed from Test Flight.
@@ -237,7 +237,7 @@ public struct ez {
     
 }
 
-extension ez {
+extension eg {
     
     /// EZSwiftExtensions
     static func deviceLanguage() -> String {
