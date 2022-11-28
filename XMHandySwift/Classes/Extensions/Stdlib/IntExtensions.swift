@@ -72,29 +72,6 @@ public extension Int {
         return String(format: "\(sign)%ikk", abs / 100000)
     }
 
-    /// SwifterSwift: Array of digits of integer value.
-    var digits: [Int] {
-        guard self != 0 else { return [0] }
-        var digits = [Int]()
-        var number = abs
-
-        while number != 0 {
-            let xNumber = number % 10
-            digits.append(xNumber)
-            number /= 10
-        }
-
-        digits.reverse()
-        return digits
-    }
-
-    /// SwifterSwift: Number of digits of integer value.
-    var digitsCount: Int {
-        guard self != 0 else { return 1 }
-        let number = Double(abs)
-        return Int(log10(number) + 1)
-    }
-
 }
 
 // MARK: - Methods

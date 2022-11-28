@@ -234,15 +234,6 @@ public struct eg {
         CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, CFRunLoopMode.commonModes)
         return timer!
     }
-    
-    /// EZSE: Judge whether it is Liu Hai ping
-    static var isIphoneX: Bool {
-        if #available(iOS 11.0, *) {
-            return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0 > 0
-        } else {
-            return false
-        }
-    }
 }
 
 extension eg {
