@@ -1028,7 +1028,7 @@ public extension Date {
     }
 
     /// EZSE: Easy creation of time passed String. Can be Years, Months, days, hours, minutes or seconds
-    public func timePassed() -> String {
+    func timePassed() -> String {
         let date = Date()
         let calendar = Calendar.autoupdatingCurrent
         let components = (calendar as NSCalendar).components([.year, .month, .day, .hour, .minute, .second], from: self, to: date, options: [])
@@ -1057,5 +1057,32 @@ public extension Date {
         }
     }
 }
+
+// MARK: - Date
+public extension Date {
+    var isPast: Bool {
+        return isPast(referenceDate: Date())
+    }
+
+    var isFuture: Bool {
+        return !isPast
+    }
+
+    func isPast(referenceDate: Date) -> Bool {
+        return timeIntervalSince(referenceDate) <= 0
+    }
+
+    func isFuture(referenceDate: Date) -> Bool {
+        return !isPast(referenceDate: referenceDate)
+    }
+
+    // `Date` in memory is a wrap for `TimeInterval`. But in file attribute it can only accept `Int` number.
+    // By default the system will `round` it. But it is not friendly for testing purpose.
+    // So we always `ceil` the value when used for file attributes.
+    var fileAttributeDate: Date {
+        return Date(timeIntervalSince1970: ceil(timeIntervalSince1970))
+    }
+}
+
 
 #endif

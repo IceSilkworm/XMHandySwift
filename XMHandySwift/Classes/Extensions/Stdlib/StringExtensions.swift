@@ -10,6 +10,10 @@
 import Foundation
 #endif
 
+#if canImport(CommonCrypto)
+import CommonCrypto
+#endif
+
 #if canImport(UIKit)
 import UIKit
 #endif
@@ -1242,6 +1246,33 @@ public extension String {
         return (self as NSString).appendingPathExtension(str)
     }
 
+}
+
+
+// MARK: - String
+public extension String {
+    
+    /// This hash algorithm isn’t considered cryptographically secure, but is provided for backward compatibility with older services that require it. For new services, prefer one of the secure hashes, like SHA512.
+    ///
+    /// Returns a lowercase String for md5 hash.
+    var md5: String {
+        let length = Int(CC_MD5_DIGEST_LENGTH)
+        let messageData = self.data(using:.utf8)!
+        var digestData = Data(count: length)
+        
+        _ = digestData.withUnsafeMutableBytes { digestBytes -> UInt8 in
+            messageData.withUnsafeBytes { messageBytes -> UInt8 in
+                if let messageBytesBaseAddress = messageBytes.baseAddress, let digestBytesBlindMemory = digestBytes.bindMemory(to: UInt8.self).baseAddress {
+                    let messageLength = CC_LONG(messageData.count)
+                    CC_MD5(messageBytesBaseAddress, messageLength, digestBytesBlindMemory)
+                }
+                return 0
+            }
+        }
+        let result = digestData.map { String(format: "%02hhx", $0) }.joined()
+        return result
+    }
+    
 }
 
 #endif
