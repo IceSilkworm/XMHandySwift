@@ -57,7 +57,7 @@ infix operator %%/*<--infix operator is required for custom infix char combos*/
  * NOTE: Int's can still use single %
  * NOTE: there is also .remainder which supports returning negatives as oppose to truncatingRemainder (aka the old %) which returns only positive.
  */
-public func %% (left:CGFloat, right:CGFloat) -> CGFloat {
+public func %% (left: CGFloat, right: CGFloat) -> CGFloat {
     return left.truncatingRemainder(dividingBy: right)
 }
 
@@ -71,8 +71,8 @@ public func %% (left:CGFloat, right:CGFloat) -> CGFloat {
  * Bool(CGFloat(20))//true
  * Bool(CGFloat.nan)//true
  */
-extension Bool{
-    init(_ value:CGFloat) {
+public extension Bool {
+    init(_ value: CGFloat) {
         self.init(value != 0)
     }
 }

@@ -123,7 +123,6 @@ public extension NSObject {
     }
     
     func doOnceInALifeTime(_ method: @escaping () -> ()) -> Void {
-        
         if self.hasInvoked == nil || self.hasInvoked?.boolValue == false {
             method()
             self.hasInvoked = NSNumber.init(value: true)
@@ -134,7 +133,8 @@ public extension NSObject {
 
 public extension NSObject {
     
-    /*internal*/ static func swizzleMethod(_ cls: AnyClass?, _ originSelector: Selector, _ swizzleSelector: Selector)  {
+    /*internal*/
+    static func swizzleMethod(_ cls: AnyClass?, _ originSelector: Selector, _ swizzleSelector: Selector)  {
         let originMethod = class_getInstanceMethod(cls, originSelector)
         let swizzleMethod = class_getInstanceMethod(cls, swizzleSelector)
         guard let swMethod = swizzleMethod, let oMethod = originMethod else { return }

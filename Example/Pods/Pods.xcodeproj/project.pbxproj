@@ -26,6 +26,7 @@
 		271B123F28178EAC00AEDFF7 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271B123E28178EAC00AEDFF7 /* UIImageExtensions.swift */; };
 		272600D714D400B563A275444E16F223 /* ThemeDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78CEEF9C2DF5B5DF501B2894A7904A9 /* ThemeDefines.swift */; };
 		274490C62812A47000FC4313 /* RAReorderableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274490C52812A47000FC4313 /* RAReorderableLayout.swift */; };
+		2797EA8D29756C25002F0A56 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797EA8C29756C25002F0A56 /* Initializable.swift */; };
 		27D264422807CE3400ABE764 /* CenteredCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D264412807CE3400ABE764 /* CenteredCollectionViewFlowLayout.swift */; };
 		27F4232F292B278000FE8EEE /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4232D292B278000FE8EEE /* Async.swift */; };
 		27F42332292B299F00FE8EEE /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F42331292B299F00FE8EEE /* CGFloatExtensions.swift */; };
@@ -36,7 +37,6 @@
 		325F60432A7B54716D91DB1D3F551027 /* UIBarButtonItem+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E807144EA3F1607097E3E9A86104A1 /* UIBarButtonItem+.swift */; };
 		32D8FFBB7E7DB06B6075778804A9056E /* FloatingPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70943F0B76D3CD7BA86206DA7C2719CC /* FloatingPointExtensions.swift */; };
 		3643F6681525D0AC1336E13681D61412 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49470DE201810C0680834ED953C99A4C /* DataExtensions.swift */; };
-		3A3A9777F652A7E9CDFF76012A1313DF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4879E0F13ABDA2A89B42AC5D67F1834D /* Toast.swift */; };
 		3AC8310E09DA8E26284E8D940C5BF4D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		3B88418A0470491E0CC19A7901FBB3B9 /* Pods-XMHandySwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F177861EDDAD39D6FF0A437B990736 /* Pods-XMHandySwift_Example-dummy.m */; };
 		3C69E7CF037E2A0BBC0F9B6392AC694F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC7E763526D8799B01E8184448FA865 /* Reachability.swift */; };
@@ -57,7 +57,6 @@
 		6377EE28D7DF2EB2CAE9B46407E60900 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE85CB14E7D9F5B0EFA971F9C9F91801 /* IntExtensions.swift */; };
 		655C4AF3FE7C2BA589890569F028D4B7 /* EdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4755520E088FFFAB479FBAE3BB602D6D /* EdgeInsetsExtensions.swift */; };
 		693BF8148E90A3FBF91A3FD191D5D7F0 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBE5B00D469157128CFF67FAC0AEB28 /* UICollectionView+Reusable.swift */; };
-		6F955B3EA6DCD3F3AFD408F2EF90DC66 /* DataExtensions+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F788E68DE26D3698AC403881D49B6D /* DataExtensions+.swift */; };
 		732E23D72C309BF309168BF9F234B837 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22F636770E7090B0C16332E31967BE /* BundleExtensions.swift */; };
 		76D04384A85D67B38B9A6D3A7A121C96 /* Pods-XMHandySwift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C26CC83D1181E59E9F51950C7C3BF2D /* Pods-XMHandySwift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		805FC460A671DE20DEBEB0A1D823C4B8 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DD5566254194A872185DABF678409 /* URLExtensions.swift */; };
@@ -137,7 +136,6 @@
 		12E53A1253D4DF4EFB9E8EC99CD6E430 /* Pods-XMHandySwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XMHandySwift_Tests.modulemap"; sourceTree = "<group>"; };
 		14A33F6E08BDC27A1AE9049076DDE832 /* DeviceKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DeviceKit-umbrella.h"; sourceTree = "<group>"; };
 		14BAA0798CE993B9B8EEF3E67E9FF668 /* Pods-XMHandySwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XMHandySwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		18F788E68DE26D3698AC403881D49B6D /* DataExtensions+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DataExtensions+.swift"; sourceTree = "<group>"; };
 		190D7383CCEFD8AB3F8CB93098A3F214 /* DeviceKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DeviceKit; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19FA239155BAA1E834A07416DA46AD0D /* Auto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Auto.swift; sourceTree = "<group>"; };
 		1FB20BD1C2A51B3FA90F1BA4363A0694 /* UIButtonExtensions+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButtonExtensions+.swift"; sourceTree = "<group>"; };
@@ -145,6 +143,7 @@
 		24ADB2423B77DFE6916FC2C1F266AFC6 /* NibLoadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		271B123E28178EAC00AEDFF7 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		274490C52812A47000FC4313 /* RAReorderableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAReorderableLayout.swift; sourceTree = "<group>"; };
+		2797EA8C29756C25002F0A56 /* Initializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Initializable.swift; sourceTree = "<group>"; };
 		27D264412807CE3400ABE764 /* CenteredCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		27F4232D292B278000FE8EEE /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		27F42331292B299F00FE8EEE /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
@@ -161,7 +160,6 @@
 		473BEC21730C297F99D42BDE4319695D /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		4755520E088FFFAB479FBAE3BB602D6D /* EdgeInsetsExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EdgeInsetsExtensions.swift; sourceTree = "<group>"; };
 		479FDC8A3863DC0B938FD5660860C9D2 /* Device.generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Device.generated.swift; path = Source/Device.generated.swift; sourceTree = "<group>"; };
-		4879E0F13ABDA2A89B42AC5D67F1834D /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		49470DE201810C0680834ED953C99A4C /* DataExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		49E807144EA3F1607097E3E9A86104A1 /* UIBarButtonItem+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+.swift"; sourceTree = "<group>"; };
 		4C26CC83D1181E59E9F51950C7C3BF2D /* Pods-XMHandySwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XMHandySwift_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -465,8 +463,8 @@
 				D3FD064115B4891147131B1CA767BA22 /* PopupView.swift */,
 				CFC7E763526D8799B01E8184448FA865 /* Reachability.swift */,
 				C9BDF30D14054C5BD7747519BC8C7A88 /* SwiftEventBus.swift */,
+				2797EA8C29756C25002F0A56 /* Initializable.swift */,
 				96CB5AC6362329701BBE624E1DCED9CE /* Then.swift */,
-				4879E0F13ABDA2A89B42AC5D67F1834D /* Toast.swift */,
 			);
 			name = Widgets;
 			path = XMHandySwift/Classes/Widgets;
@@ -498,7 +496,6 @@
 				B7FF24B16213EEAD1605323A5BFF93C3 /* NamespaceProtocol.swift */,
 				503BCA0CC220B6EFC6275AAD43F4B61A /* Eg+.swift */,
 				CB22F636770E7090B0C16332E31967BE /* BundleExtensions.swift */,
-				18F788E68DE26D3698AC403881D49B6D /* DataExtensions+.swift */,
 				5AE67B244B3B209D936252C37747B51D /* DispatchQueueExtensions.swift */,
 				80E000BC205A83B654467CCBDE6B7647 /* NSObjectExtensions.swift */,
 				232536C54D09BE24F1C3E7B174D2F7C5 /* NSRangeExtension.swift */,
@@ -841,7 +838,6 @@
 				2A8DB44334E4F41E96BBD2491DF56F4A /* CollectionExtensions.swift in Sources */,
 				F6EF8C686E31A4234AFFBA767F9689F7 /* ComparableExtensions.swift in Sources */,
 				3643F6681525D0AC1336E13681D61412 /* DataExtensions.swift in Sources */,
-				6F955B3EA6DCD3F3AFD408F2EF90DC66 /* DataExtensions+.swift in Sources */,
 				AAF78BBE289FFFEDDB612DACE7E2359A /* DateExtensions.swift in Sources */,
 				271B123F28178EAC00AEDFF7 /* UIImageExtensions.swift in Sources */,
 				4644808D73DAB5D9F0B8C32EF5F0BA4B /* DictionaryExtensions.swift in Sources */,
@@ -872,6 +868,7 @@
 				AD4F20BA2A0C25566A9DBFF7E4F347E5 /* Screen.swift in Sources */,
 				05C448FE36A98C5F81877E0B42C082A6 /* SequenceExtensions.swift in Sources */,
 				A2D0155CBE9BF6170B66F895183D5EE2 /* StoryboardBased.swift in Sources */,
+				2797EA8D29756C25002F0A56 /* Initializable.swift in Sources */,
 				1550F9B1AE371867FDF828016BF744AA /* StoryboardSceneBased.swift in Sources */,
 				986F22E024820DB2A18776F85B10A644 /* String+LocalizeBundle.swift in Sources */,
 				4F1F0E98DB8BB3F95ED5A3165E5A5FA2 /* String+LocalizedBundleTableName.swift in Sources */,
@@ -882,7 +879,6 @@
 				866FAE74D336AABC73B911D964B080E3 /* ThemeExtensions.swift in Sources */,
 				2E4AD60A0DB72FAEECCF13A840C636EE /* ThemeManager.swift in Sources */,
 				08540946A292E4D1822DDD24E8B9EE4A /* Then.swift in Sources */,
-				3A3A9777F652A7E9CDFF76012A1313DF /* Toast.swift in Sources */,
 				274490C62812A47000FC4313 /* RAReorderableLayout.swift in Sources */,
 				325F60432A7B54716D91DB1D3F551027 /* UIBarButtonItem+.swift in Sources */,
 				9B838F9135AB528624057C93048381C8 /* UIButtonExtensions+.swift in Sources */,
