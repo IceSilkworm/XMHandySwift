@@ -1,6 +1,6 @@
 {
   "name": "XMHandySwift",
-  "version": "0.1.4",
+  "version": "2.4.0",
   "summary": "A handy collection of more than 500 native Swift extensions to boost your productivity.",
   "description": "XMHandySwift is a collection of over 500 native Swift extensions, with handy methods, syntactic sugar, and performance improvements for wide range of primitive data types, UIKit and Cocoa classes –over 500 in 1– for iOS, macOS, tvOS and watchOS.",
   "homepage": "https://github.com/IceSilkworm/XMHandySwift",
@@ -13,10 +13,10 @@
   },
   "source": {
     "git": "https://github.com/IceSilkworm/XMHandySwift.git",
-    "tag": "0.1.4"
+    "tag": "2.4.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "11.0"
   },
   "default_subspecs": "HandySwift",
   "swift_versions": "4.2",
@@ -33,7 +33,7 @@
     },
     {
       "name": "Core",
-      "source_files": "XMHandySwift/Classes/Core/*"
+      "source_files": "XMHandySwift/Classes/Widgets/*"
     },
     {
       "name": "Extensions",
