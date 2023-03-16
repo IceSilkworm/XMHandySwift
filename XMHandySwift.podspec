@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XMHandySwift'
-  s.version          = '2.5.0'
+  s.version          = '2.5.1'
   s.summary          = 'A handy collection of more than 500 native Swift extensions to boost your productivity.'
 
 # This description is used to generate tags and improve search results.
@@ -31,22 +31,17 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = '11.0'
 
-  s.default_subspec = 'HandySwift'
-  s.subspec 'HandySwift' do |ss|
-    ss.source_files = 'XMHandySwift/Classes/**/*'
-  end
+  s.default_subspec = 'Extensions'
+  
+  
+  s.subspec 'Extensions' do |p|
+    p.source_files = 'XMHandySwift/Classes/Extensions/*'
+    p.dependency "XMHandySwift/Vendors"
 
-  s.subspec 'Core' do |ss|
-    ss.source_files = 'XMHandySwift/Classes/Widgets/*'
   end
   
-  s.subspec 'Extensions' do |ss|
-    ss.source_files = 'XMHandySwift/Classes/Extensions/*'
-  end
-  
-  s.subspec 'Vendors' do |ss|
-    ss.source_files = 'XMHandySwift/Classes/Vendors/**/*'
-#      vendors.dependency 'HandySwift/Core'
+  s.subspec 'Vendors' do |p|
+    p.source_files = 'XMHandySwift/Classes/Vendors/**/*'
   end
   
   # s.resource_bundles = {

@@ -81,7 +81,6 @@
 		D3ADD2C1D797D7F5D8009466903A003B /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C03FE4C4C765C83CD6D27DA88C672E7 /* UIColorExtensions.swift */; };
 		D4DD344FC6319507EF3CC5F64B388CEC /* BoolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF33CA6335E45E9DD8374000E76FD46A /* BoolExtensions.swift */; };
 		D9ACCE8D8C8E3761FE9A18627EFBC328 /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A0EC0144C4E39EBE21D0A7D6643091 /* UIWindowExtensions.swift */; };
-		DF59CC87897C64B49BFE8D6BB3616FC4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3795C13BDDC9D49CCDB9774F46D6320 /* Reachability.swift */; };
 		E1DBE0BF3E9D8D5E815FFD4D3BF9EA79 /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6AF0E8165092D2133E7E0F82576C29 /* BundleExtensions.swift */; };
 		E4C304A5A1068ADCDEB15F930E1061AC /* UICollectionViewLeftAlignedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C64E69D6160C1A56F05757AA27856 /* UICollectionViewLeftAlignedLayout.swift */; };
 		F6317F7FB9AF54B57D26BC27FD242BD3 /* CHTCollectionViewWaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD3DCA241BE4A773E5CF2D892C6921 /* CHTCollectionViewWaterfallLayout.swift */; };
@@ -195,7 +194,6 @@
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A109B62ED8339F669E1CE1837FEC4A49 /* RAReorderableLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RAReorderableLayout.swift; sourceTree = "<group>"; };
 		A363BA09B9B0D9B35CC791097CA8E4DB /* Then.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
-		A3795C13BDDC9D49CCDB9774F46D6320 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A37FEC4E0AB053BFEAA1488AF3E75182 /* LocaleExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocaleExtensions.swift; sourceTree = "<group>"; };
 		A5348B885476F3C3D6C8AFCCEC3675A6 /* DeviceKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DeviceKit-prefix.pch"; sourceTree = "<group>"; };
 		A98C5B38D207E33E6FC7607EEADC8E36 /* Pods-XMHandySwift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XMHandySwift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -445,6 +443,11 @@
 		92891151FF4C9E19430D7482EB927199 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				62E974F16AA64E59C17B2F1F68ACDFFC /* Async.swift */,
+				783C56C91D24992E2B8CD879CC69F5E3 /* Initializable.swift */,
+				5D33DDE3A4DBFDC39B55D339CD06C83D /* PopupView.swift */,
+				EA1F192DDD5C126D50E03FF74CC9CA77 /* SwiftEventBus.swift */,
+				A363BA09B9B0D9B35CC791097CA8E4DB /* Then.swift */,
 				3D6AF0E8165092D2133E7E0F82576C29 /* BundleExtensions.swift */,
 				97114EDB030C43C43C9623DB1B7D3CFF /* DispatchQueueExtensions.swift */,
 				9849BB75D5930326BE48DD461B706307 /* Eg.swift */,
@@ -487,7 +490,6 @@
 			children = (
 				92891151FF4C9E19430D7482EB927199 /* Extensions */,
 				168EAF33F4056088CB93249469BCC56F /* Vendors */,
-				D23591006191C0D938E048866EDC4B3B /* Widgets */,
 			);
 			name = HandySwift;
 			sourceTree = "<group>";
@@ -572,20 +574,6 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D23591006191C0D938E048866EDC4B3B /* Widgets */ = {
-			isa = PBXGroup;
-			children = (
-				62E974F16AA64E59C17B2F1F68ACDFFC /* Async.swift */,
-				783C56C91D24992E2B8CD879CC69F5E3 /* Initializable.swift */,
-				5D33DDE3A4DBFDC39B55D339CD06C83D /* PopupView.swift */,
-				A3795C13BDDC9D49CCDB9774F46D6320 /* Reachability.swift */,
-				EA1F192DDD5C126D50E03FF74CC9CA77 /* SwiftEventBus.swift */,
-				A363BA09B9B0D9B35CC791097CA8E4DB /* Then.swift */,
-			);
-			name = Widgets;
-			path = XMHandySwift/Classes/Widgets;
 			sourceTree = "<group>";
 		};
 		E9BAFF04BA4117973A497CEAE6C7012A /* Foundation */ = {
@@ -864,7 +852,6 @@
 				29278AA0378B15A1304BC6523C779C3C /* OptionalExtensions.swift in Sources */,
 				69A72C900CE351995A41730AD5EF90DD /* PopupView.swift in Sources */,
 				1E04A008C80D16F69B42B07C290E8126 /* RAReorderableLayout.swift in Sources */,
-				DF59CC87897C64B49BFE8D6BB3616FC4 /* Reachability.swift in Sources */,
 				0F2386C220EC1D69FC469AC7E488D949 /* RegexExtensions.swift in Sources */,
 				F6464578D70DC6BE3C4C159EDC7A0FC6 /* Reusable.swift in Sources */,
 				2F0ABBE651947E42178ED164B4109C87 /* Screen.swift in Sources */,
